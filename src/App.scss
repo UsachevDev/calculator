@@ -1,0 +1,130 @@
+.wrapper {
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+.calc {
+  padding: 20px 15px;
+  padding-bottom: 5px;
+  border-radius: 35px;
+  background: #040404;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input {
+    border: none;
+    padding: 10px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 25px;
+  }
+
+  &_actions {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "brackets brackets brackets controls"
+      "values   values   values   controls"
+      "values   values   values   controls"
+      "values   values   values   controls";
+      margin: 0 auto;
+      padding-bottom: 10px;
+  }
+
+  &_brackets {
+    grid-area: brackets;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    button {
+      background-color: #a5a5a5;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #7c7c7c;
+      }
+    }
+  }
+
+  &_values {
+    grid-area: values;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    button {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: #3c3c3c;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #7c7c7c;
+      }
+    }
+
+    button:nth-last-child(2) {
+      width: 100%;
+      grid-column: span 2;
+      border-radius: 30px;
+    }
+  }
+
+  &_controls {
+    grid-area: controls;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+
+    button {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background-color: #ff9500;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #7c7c7c;
+      }
+    }
+  }
+}
